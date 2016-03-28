@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var txtBoxEmail: UITextField!
+  
+    @IBOutlet weak var txtBoxPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +25,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func btnSubmit(sender: UIButton) {
+        self.txtBoxEmail.resignFirstResponder()
+        self.txtBoxPassword.resignFirstResponder()
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
 
